@@ -4,7 +4,7 @@ import { Logo, Button } from '../../components/commons';
 import { InputText, InputPassword } from '../../components/forms';
 import { formLogin } from '../../utils/form-validation';
 
-export default function Login() {
+export default function LoginPage() {
     const { register, formState, handleSubmit, setError } = useForm(formLogin);
 
     const onSubmit = async (value) => {

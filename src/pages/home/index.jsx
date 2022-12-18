@@ -1,9 +1,9 @@
-import React from 'react';
+import ListHighlights from '../../components/sections/home/list-highlights';
 
-export default function Home() {
+export default function HomePage() {
     return (
         <div className='flex w-full h-full'>
-            <span className='text-white'>home</span>
+            <ListHighlights />
         </div>
     );
 }

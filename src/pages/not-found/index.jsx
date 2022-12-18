@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/commons';
 
-export default function NotFound() {
+export default function NotFoundPage() {
     const navigate = useNavigate();
     return (
         <div className='flex flex-col justify-center items-center h-screen w-full space-y-2'>

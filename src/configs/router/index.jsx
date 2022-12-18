@@ -2,6 +2,7 @@ import { Home, Login, NotFound } from '../../pages';
 import { Navigate } from 'react-router-dom';
 import DefaulLayout from '../../components/layouts/default-layout';
 import OuterLayout from '../../components/layouts/outer-layout';
+import lists from './lists';
 
 const router = (isAuth) => [
     {
@@ -9,6 +10,7 @@ const router = (isAuth) => [
         element: isAuth ? <DefaulLayout /> : <Navigate to='/login' />,
         children: [
             { path: 'dashboard', element: <Home /> },
+            ...lists,
             { path: '*', element: <Navigate to='/404' /> },
         ],
     },

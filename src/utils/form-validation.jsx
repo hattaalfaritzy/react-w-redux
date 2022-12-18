@@ -6,4 +6,11 @@ const loginSchema = Yup.object().shape({
     password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
 });
 
+const listsSchema = Yup.object().shape({
+    name: Yup.string().required('Name is required'),
+    phone: Yup.number().required('Phone is required'),
+    email: Yup.string().email('Format email harus valid!').required('Email is required'),
+});
+
 export const formLogin = { resolver: yupResolver(loginSchema) };
+export const formLists = { resolver: yupResolver(listsSchema) };

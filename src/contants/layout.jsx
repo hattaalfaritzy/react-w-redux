@@ -8,6 +8,11 @@ export const NAV_MENU = [
         icon: <IoMdListBox />,
     },
     {
+        label: 'List Data',
+        href: 'lists',
+        icon: <IoMdListBox />,
+    },
+    {
         label: 'Playground',
         href: 'playground',
         icon: <IoMdListBox />,
