@@ -6,7 +6,7 @@ import { store, persistor } from '../stores';
 import router from '../configs/router';
 
 export default function App() {
-    const [auth, setAuth] = useState(true);
+    const [auth, setAuth] = useState(false);
     const routing = useRoutes(router(auth));
     return (
         <Provider store={store}>
