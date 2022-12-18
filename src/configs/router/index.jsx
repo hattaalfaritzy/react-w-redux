@@ -1,31 +1,23 @@
-import { Home, Login, NotFound, Playground } from '../../pages';
+import { Home, Login, NotFound } from '../../pages';
 import { Navigate } from 'react-router-dom';
 import DefaulLayout from '../../components/layouts/default-layout';
 import OuterLayout from '../../components/layouts/outer-layout';
-import educations from './education';
-import experiences from './experiences';
-import projects from './projects';
-import profile from './profile';
 
 const router = (isAuth) => [
     {
-        path: 'backoffice',
+        path: 'app',
         element: isAuth ? <DefaulLayout /> : <Navigate to='/login' />,
         children: [
             { path: 'dashboard', element: <Home /> },
-            ...educations,
-            ...experiences,
-            ...projects,
-            ...profile,
             { path: '*', element: <Navigate to='/404' /> },
         ],
     },
     {
         path: '/',
-        element: !isAuth ? <OuterLayout /> : <Navigate to='/backoffice/dashboard' />,
+        element: !isAuth ? <OuterLayout /> : <Navigate to='/app/dashboard' />,
         children: [
             { path: 'login', element: <Login /> },
-            { path: '/', element: <Navigate to='/backoffice/dashboard' /> },
+            { path: '/', element: <Navigate to='/app/dashboard' /> },
             { path: '*', element: <Navigate to='/404' /> },
         ],
     },
@@ -34,7 +26,6 @@ const router = (isAuth) => [
         element: <OuterLayout />,
         children: [
             { path: '', element: <NotFound /> },
-            { path: 'playground', element: <Playground /> },
         ],
     },
 ];
