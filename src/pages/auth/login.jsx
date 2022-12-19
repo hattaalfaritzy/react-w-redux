@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { Logo, Button } from '../../components/commons';
 import { InputText, InputPassword } from '../../components/forms';
 import { formLogin } from '../../utils/form-validation';
 import { login } from '../../stores/actions/auth';
-import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
     const { register, formState, handleSubmit, setError } = useForm(formLogin);
@@ -16,9 +16,17 @@ export default function LoginPage() {
 
     const onSubmit = async (value) => {
         setLoading(true);
-        await dispatch(login(value)).then(res => {
-            if (res) navigate(0);
-        });
+        try {
+            await dispatch(login(value)).then(res => {
+                if (res) navigate(0);
+            });
+        } catch (err) {
+            if (err.message.toLowerCase().includes('email')) {
+                setError('email', { message: err.message });
+            } else if (err.message.toLowerCase().includes('password')) {
+                setError('password', { message: err.message });
+            }
+        }
         setLoading(false);
     };
 

@@ -2,17 +2,18 @@ import * as actionName from '../constant';
 import * as authApi from '../../api/auth';
 import { globalToasterError } from '../../utils/helper';
 
-export const login = (data) => async (dispatch) => {
+export const login = ({ email, password }) => async (dispatch) => {
     try {
-        const dataLogin = await authApi.login({ email: data.email, password: data.password });
-		if(dataLogin.status === 'Success') {
+        const res = await authApi.login({ email, password });
+		if (res.status === 'Error') {
+			globalToasterError(res.message);
+			throw new Error(res.message);
+		} else {
 			dispatch({
 				type: actionName.AUTH_LOGIN,
-				data: dataLogin.data.token,
+				data: res.data.token,
 			});
 			return true;
-		} else {
-			globalToasterError(dataLogin.message);
 		}
     } catch (error) {
 		throw error;
@@ -26,7 +27,6 @@ export const logout = () => async (dispatch) => {
 		});
 		return true;
     } catch (error) {
-		globalToasterError(error);
 		throw error;
     }
 };

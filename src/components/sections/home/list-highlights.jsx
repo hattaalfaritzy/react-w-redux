@@ -18,7 +18,7 @@ export default function ListHighlights({}) {
 			<HeadingLink title='Dashboard'/>
 			<div className='grid grid-cols-3 gap-6'>
 				{data.map((item, index) => (
-					<Card>
+					<Card key={index}>
 						<div className='flex flex-col justify-center items-center w-full space-y-3'>
 							<span className='text-xl text-white'>{item.title}</span>
 							<span className='text-4xl text-white'>{item.qty}</span>

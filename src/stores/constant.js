@@ -3,3 +3,9 @@ export const COUNTER_DECREMENT = 'COUNTER_DECREMENT';
 
 export const AUTH_LOGIN = 'AUTH_LOGIN';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+
+export const GET_ALL_LISTS = 'GET_ALL_LISTS';
+export const GET_DETAIL_LIST = 'GET_DETAIL_LIST';
+export const CREATE_LIST = 'CREATE_LIST';
+export const EDIT_LIST = 'EDIT_LIST';
+export const DELETE_LIST = 'DELETE_LIST';
