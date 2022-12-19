@@ -1,14 +1,25 @@
-import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { Logo, Button } from '../../components/commons';
 import { InputText, InputPassword } from '../../components/forms';
 import { formLogin } from '../../utils/form-validation';
+import { login } from '../../stores/actions/auth';
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
     const { register, formState, handleSubmit, setError } = useForm(formLogin);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const [loading, setLoading] = useState(false);
 
     const onSubmit = async (value) => {
-        console.log(value, 'value login');
+        setLoading(true);
+        await dispatch(login(value)).then(res => {
+            if (res) navigate(0);
+        });
+        setLoading(false);
     };
 
     return (
@@ -26,7 +37,7 @@ export default function LoginPage() {
                     label='Password'
                     variant='animation'
                 />
-                <Button label='Login' type='submit' className='w-full' />
+                <Button label='Login' type='submit' className='w-full' loading={loading} />
             </form>
         </div>
     );
