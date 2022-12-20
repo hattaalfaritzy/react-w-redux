@@ -8,7 +8,7 @@ import middleware from './middleware';
 const persistConfig = {
     key: 'root',
     storage,
-    blackList: ['authReducer']
+    blackList: ['authReducer', 'listsReducer']
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

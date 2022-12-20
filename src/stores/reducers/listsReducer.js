@@ -23,13 +23,11 @@ const listsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 type: action?.type,
-                data: action?.data,
             };
         case actionName.DELETE_LIST:
             return {
                 ...state,
                 type: action?.type,
-                data: action?.data,
             };
         default:
             return state;

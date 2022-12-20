@@ -11,18 +11,13 @@ export default function DataLists({}) {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const data = useSelector(listsSelector, shallowEqual);
+	const { data } = useSelector(listsSelector, shallowEqual);
 
-	const [dataLists, setDataLists] = useState([]);
+	const [dataLists, setDataLists] = useState(data);
 
 	useEffect(() => {
-		loadItem();
+        dispatch(getAll());
 	}, []);
-
-	const loadItem = async () => {
-        await dispatch(getAll());
-        setDataLists(data?.data);
-    }
 
 	const deleteItem = async (id) => {
         await dispatch(deleteData(id));

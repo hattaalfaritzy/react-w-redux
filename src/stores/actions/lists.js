@@ -29,11 +29,11 @@ export const getDetail = (id) => async (dispatch) => {
 
 export const addData = (data) => async (dispatch) => {
     try {
-        const res = await listsApi.addList(data);
+        await listsApi.addList(data);
         dispatch({
             type: actionName.CREATE_LIST,
-            data: res.data,
         });
+        dispatch(getAll());
         return true;
     } catch (error) {
 		throw error;
@@ -42,11 +42,11 @@ export const addData = (data) => async (dispatch) => {
 
 export const deleteData = (id) => async (dispatch) => {
     try {
-        const res = await listsApi.deleteList(id);
+        await listsApi.deleteList(id);
         dispatch({
             type: actionName.DELETE_LIST,
-            data: res.data,
         });
+        dispatch(getAll());
         return true;
     } catch (error) {
 		throw error;
