@@ -1,24 +1,32 @@
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { getAll } from '../../../stores/actions/lists';
+import { getAll, deleteData } from '../../../stores/actions/lists';
 import { listsSelector } from '../../../stores/selectors';
 import { Card, HeadingLink, ImageWithFallback } from '../../commons';
 import { BiTrashAlt, BiDetail, BiMessageSquareEdit } from 'react-icons/bi';
-import clsx from 'clsx';
 
 export default function DataLists({}) {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const { data } = useSelector(listsSelector, shallowEqual);
+	const data = useSelector(listsSelector, shallowEqual);
 
-	const [dataLists, setDataLists] = useState();
+	const [dataLists, setDataLists] = useState([]);
 
 	useEffect(() => {
-		dispatch(getAll());
-		setDataLists(data);
+		loadItem();
 	}, []);
+
+	const loadItem = async () => {
+        await dispatch(getAll());
+        setDataLists(data?.data);
+    }
+
+	const deleteItem = async (id) => {
+        await dispatch(deleteData(id));
+    };
 
 	return (
 		<div className='flex flex-col w-full space-y-6'>
@@ -35,7 +43,7 @@ export default function DataLists({}) {
 			/>
 			<div className={clsx(dataLists ? 'grid grid-cols-2 gap-6 w-full' : 'flex flex-col justify-center items-center w-full')}>
 				{dataLists ? (
-					dataLists.map((item, index) => (
+					dataLists?.map((item, index) => (
 						<Card key={index}>
 							<div className='flex flex-row justify-between items-ends w-full space-y-3'>
 								<div className='flex flex-col justify-start items-start w-full space-y-1'>
@@ -61,6 +69,7 @@ export default function DataLists({}) {
 									<button
 										type='submit'
 										className='group btn-rounded-icons bg-transparent hover:bg-danger on-hover border border-danger'
+										onClick={() => deleteItem(item._id)}
 									>
 										<BiTrashAlt className='text-danger group-hover:text-white on-hover' />
 									</button>

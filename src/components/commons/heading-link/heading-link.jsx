@@ -5,7 +5,7 @@ import { IoChevronBack } from 'react-icons/io5';
 import ImageWithFallback from '../image-with-fallback/image-with-fallback';
 import { useNavigate } from 'react-router-dom';
 
-export default function HeadingLink({ className, classNameTitle, classNameLabel, title, label, withBack = false, renderActions }) {
+export default function HeadingLink({ className, classNameTitle, classNameLabel, title, label, withBack = false, renderActions, loading }) {
     const navigate = useNavigate();
     return (
         <Card className={clsx('flex flex-col w-full', withBack && 'pl-4')}>
@@ -18,7 +18,11 @@ export default function HeadingLink({ className, classNameTitle, classNameLabel,
                     )}
                     <div className={clsx('flex flex-col justify-start items-start w-full', label && 'space-y-1')}>
                         <span className={clsx('text-xl text-white', classNameTitle)}>{title}</span>
-                        {label && <span className={clsx('text-white text-sm', classNameLabel)}>{label}</span>}
+                        {label && loading ? (
+                            <span className='rounded-full bg-light-700 h-5 w-36 animate-pulse' />
+                        ) : (
+                            <span className={clsx('text-white text-sm', classNameLabel)}>{label}</span>
+                        )}
                     </div>
                 </div>
                 {renderActions && renderActions}
@@ -35,4 +39,5 @@ HeadingLink.propTypes = {
     label: PropTypes.any,
     withBack: PropTypes.bool,
     renderActions: PropTypes.node,
+    loading: PropTypes.bool
 };

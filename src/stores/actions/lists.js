@@ -26,3 +26,29 @@ export const getDetail = (id) => async (dispatch) => {
 		throw error;
     }
 };
+
+export const addData = (data) => async (dispatch) => {
+    try {
+        const res = await listsApi.addList(data);
+        dispatch({
+            type: actionName.CREATE_LIST,
+            data: res.data,
+        });
+        return true;
+    } catch (error) {
+		throw error;
+    }
+};
+
+export const deleteData = (id) => async (dispatch) => {
+    try {
+        const res = await listsApi.deleteList(id);
+        dispatch({
+            type: actionName.DELETE_LIST,
+            data: res.data,
+        });
+        return true;
+    } catch (error) {
+		throw error;
+    }
+};

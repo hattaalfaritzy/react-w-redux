@@ -25,7 +25,7 @@ export default function DetailList() {
 
     return (
         <div className='flex flex-col w-full space-y-6'>
-            <HeadingLink title='Detail Data List' label='Name' withBack={true} />
+            <HeadingLink title='Detail Data List' label={detail?.name} loading={loading} withBack={true} />
             <Card className='flex flex-col justify-start items-start space-y-4'>
                 <ListForm title='Name' label={detail?.name} loading={loading} />
                 <ListForm title='Phone' label={detail?.phone} loading={loading} />
