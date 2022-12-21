@@ -14,7 +14,7 @@ const registerSchema = Yup.object().shape({
 
 const listsSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
-    phone: Yup.number().required('Phone is required'),
+    phone: Yup.string().required('Phone is required'),
     email: Yup.string().email('Format email harus valid!').required('Email is required'),
 });
 

@@ -19,6 +19,7 @@ export default function LoginPage() {
         try {
             await dispatch(login(value)).then(res => {
                 if (res) navigate(0);
+                console.log(res, 'cek');
             });
         } catch (err) {
             if (err.message.toLowerCase().includes('email')) {

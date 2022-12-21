@@ -21,8 +21,8 @@ export default function AddList() {
                     navigate('/app/lists');
                 };
             });
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            console.log(err, 'err');
         }
     };
 

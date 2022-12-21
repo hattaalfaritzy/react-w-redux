@@ -19,9 +19,9 @@ export const getDetail = (id) => async (dispatch) => {
         const res = await listsApi.getIdList(id);
         dispatch({
             type: actionName.GET_DETAIL_LIST,
-            data: res.data?.[0],
+            detail: res.data?.[0],
         });
-        return true;
+        return res.data?.[0];
     } catch (error) {
 		throw error;
     }
@@ -34,6 +34,18 @@ export const addData = (data) => async (dispatch) => {
             type: actionName.CREATE_LIST,
         });
         dispatch(getAll());
+        return true;
+    } catch (error) {
+		throw error;
+    }
+};
+
+export const editData = (id, data) => async (dispatch) => {
+    try {
+        const res = await listsApi.editList(id, data);
+        dispatch({
+            type: actionName.EDIT_LIST,
+        });
         return true;
     } catch (error) {
 		throw error;

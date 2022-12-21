@@ -13,8 +13,6 @@ export default function DataLists({}) {
 
 	const { data } = useSelector(listsSelector, shallowEqual);
 
-	const [dataLists, setDataLists] = useState(data);
-
 	useEffect(() => {
         dispatch(getAll());
 	}, []);
@@ -36,9 +34,9 @@ export default function DataLists({}) {
 					</span>
 				}
 			/>
-			<div className={clsx(dataLists ? 'grid grid-cols-2 gap-6 w-full' : 'flex flex-col justify-center items-center w-full')}>
-				{dataLists ? (
-					dataLists?.map((item, index) => (
+			<div className={clsx(data.length > 0 ? 'grid grid-cols-2 gap-6 w-full' : 'flex flex-col justify-center items-center w-full')}>
+				{data.length > 0 ? (
+					data?.map((item, index) => (
 						<Card key={index}>
 							<div className='flex flex-row justify-between items-ends w-full space-y-3'>
 								<div className='flex flex-col justify-start items-start w-full space-y-1'>
