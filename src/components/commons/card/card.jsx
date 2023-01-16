@@ -5,7 +5,7 @@ export default function Card({ className, children, onClick = () => {} }) {
     if (!children) return null;
 
     return (
-        <div aria-hidden='true' className={clsx('flex shadow-md bg-white bg-opacity-10 rounded-lg p-6', className)} onClick={onClick()}>
+        <div aria-hidden='true' className={clsx('flex shadow-md bg-white bg-opacity-10 rounded-lg p-4 lg:p-6', className)} onClick={onClick()}>
             {children}
         </div>
     );

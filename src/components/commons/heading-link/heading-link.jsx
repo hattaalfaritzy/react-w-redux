@@ -13,11 +13,11 @@ export default function HeadingLink({ className, classNameTitle, classNameLabel,
                 <div className={clsx('flex flex-row justify-start items-center', withBack && 'space-x-4')}>
                     {withBack && (
                         <div onClick={() => navigate(-1)}>
-                            <IoChevronBack className='text-3xl text-white hover:text-primary on-hover cursor-pointer' />
+                            <IoChevronBack className='text-xl lg:text-3xl text-white hover:text-primary on-hover cursor-pointer' />
                         </div>
                     )}
                     <div className={clsx('flex flex-col justify-start items-start w-full', label && 'space-y-1')}>
-                        <span className={clsx('text-xl text-white', classNameTitle)}>{title}</span>
+                        <span className={clsx('text-base lg:text-xl text-white', classNameTitle)}>{title}</span>
                         {label && loading ? (
                             <span className='rounded-full bg-light-700 h-5 w-36 animate-pulse' />
                         ) : (

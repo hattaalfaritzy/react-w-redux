@@ -11,7 +11,7 @@ export default function Accordion({ defaultOpen, className, classNameTitle, clas
                     <Disclosure.Button className={clsx('flex flex-row justify-start items-center w-full', className)}>
                         <div className={clsx('flex flex-row justify-start items-center w-full', withIcon && 'space-x-4')}>
                             {withIcon && withIcon}
-                            <span className={clsx(classNameTitle || 'text-base')}>{title}</span>
+                            <span className={clsx(classNameTitle || 'text-xs lg:text-base')}>{title}</span>
                         </div>
                         <HiOutlineChevronDown className={`text-primary-terteriary cursor-pointer ${open ? 'transform rotate-180' : ''}`} />
                     </Disclosure.Button>

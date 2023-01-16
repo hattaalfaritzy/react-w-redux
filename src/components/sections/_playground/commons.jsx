@@ -39,25 +39,25 @@ export default function Commons() {
     return (
         <div className='flex flex-col space-y-6'>
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Accordion</span>
+                <span className='text-sm lg:text-xl text-white'>Components Accordion</span>
                 <Accordion title='Accordion' className='text-white text-base' classNameContent='text-white bg-white/30 p-3 rounded mt-3'>
                     <p>Content Accordion</p>
                 </Accordion>
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Avatar</span>
+                <span className='text-sm lg:text-xl text-white'>Components Avatar</span>
                 <Avatar src='/avatar.svg' name='Hatta' />
                 <Avatar src='/avatar.svg' name='Hatta' variant='reverse' />
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Breadcrumb</span>
+                <span className='text-sm lg:text-xl text-white'>Components Breadcrumb</span>
                 <Breadcrumb routes={breadcumb} />
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Button</span>
+                <span className='text-sm lg:text-xl text-white'>Components Button</span>
                 <Accordion className='text-white text-base' title='Button Align, Button Label & Icon, Button Icon'>
                     <div className='flex flex-col max-w-sm space-y-4 my-4'>
                         <Button onClick={() => {}} label='Lihat di olx.com' iconLeft={<BsLink45Deg size={18} />} className='w-full' align='start' />
@@ -126,12 +126,12 @@ export default function Commons() {
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Card</span>
+                <span className='text-sm lg:text-xl text-white'>Components Card</span>
                 <Card className='text-white'>Card</Card>
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Dropdown</span>
+                <span className='text-sm lg:text-xl text-white'>Components Dropdown</span>
                 <div className='grid grid-cols-2 gap-x-2'>
                     <Dropdown label='Dropdown' data={dropdown} onChange={(val) => val.onClick()} />
                     <Dropdown data={dropdown} onChange={(val) => val.onClick()}>
@@ -141,8 +141,8 @@ export default function Commons() {
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Heading Link</span>
-                <div className='grid grid-cols-2 gap-4'>
+                <span className='text-sm lg:text-xl text-white'>Components Heading Link</span>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                     <HeadingLink title='Data Educations' />
                     <HeadingLink title='Add Educations' withBack={true} label={<Breadcrumb routes={breadcumb} />} />
                     <HeadingLink title='Edit Educations' withBack={true} />
@@ -151,18 +151,18 @@ export default function Commons() {
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components List Form</span>
+                <span className='text-sm lg:text-xl text-white'>Components List Form</span>
                 <ListForm title='First Name' label='Hatta' />
                 <ListForm title='Last Name' label='Alfaritzy' />
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Logo</span>
+                <span className='text-sm lg:text-xl text-white'>Components Logo</span>
                 <Logo />
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Message</span>
+                <span className='text-sm lg:text-xl text-white'>Components Message</span>
                 <Message type='success' label='Message Success' />
                 <Message type='info' label='Message Info' />
                 <Message type='warning' label='Message Warning' />
@@ -171,7 +171,7 @@ export default function Commons() {
             </div>
 
             <div className='container-components-playground'>
-                <span className='text-xl text-white'>Components Tags</span>
+                <span className='text-sm lg:text-xl text-white'>Components Tags</span>
                 <Tags label='404' className='max-w-fit' />
                 <Tags label='404' variant='hashtags' href='/404' />
             </div>

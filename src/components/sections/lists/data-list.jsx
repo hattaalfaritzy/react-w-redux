@@ -34,15 +34,15 @@ export default function DataLists({}) {
 					</span>
 				}
 			/>
-			<div className={clsx(data.length > 0 ? 'grid grid-cols-2 gap-6 w-full' : 'flex flex-col justify-center items-center w-full')}>
+			<div className={clsx(data.length > 0 ? 'grid grid-cols-1 lg:grid-cols-3 gap-6 w-full' : 'flex flex-col justify-center items-center w-full')}>
 				{data.length > 0 ? (
 					data?.map((item, index) => (
 						<Card key={index}>
 							<div className='flex flex-row justify-between items-ends w-full space-y-3'>
 								<div className='flex flex-col justify-start items-start w-full space-y-1'>
-									<span className='text-white text-sm font-semibold'>{item.name}</span>
-									<span className='text-white text-xs'>{item.phone}</span>
-									<span className='text-white text-xs'>{item.email}</span>
+									<span className='text-white text-xs lg:text-sm font-semibold'>{item.name}</span>
+									<span className='text-white text-xxs lg:text-xs'>{item.phone}</span>
+									<span className='text-white text-xxs lg:text-xs'>{item.email}</span>
 								</div>
 								<div className='flex flex-row justify-end items-end space-x-4 w-full'>
 									<button

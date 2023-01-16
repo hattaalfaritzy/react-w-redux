@@ -14,28 +14,28 @@ export default function Forms() {
 
     return (
         <Card className='flex flex-col space-y-6'>
-            <span className='text-3xl text-white'>List Components Forms</span>
+            <span className='text-lg lg:text-3xl text-white'>List Components Forms</span>
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-6 w-full'>
                 <div className='container-components-playground'>
-                    <span className='text-xl text-white'>Components Input Text</span>
+                    <span className='text-sm lg:text-xl text-white'>Components Input Text</span>
                     <div className='flex flex-col w-full space-y-4'>
                         <InputText register={register('text')} placeholder='Input your text' errors={formState.errors} label='Input Text' />
                     </div>
                 </div>
                 <div className='container-components-playground'>
-                    <span className='text-xl text-white'>Components Input Password</span>
+                    <span className='text-sm lg:text-xl text-white'>Components Input Password</span>
                     <div className='flex flex-col w-full space-y-4'>
                         <InputPassword register={register('password')} placeholder='Input your password' errors={formState.errors} label='Input Password' />
                     </div>
                 </div>
                 <div className='container-components-playground'>
-                    <span className='text-xl text-white'>Components Input Number</span>
+                    <span className='text-sm lg:text-xl text-white'>Components Input Number</span>
                     <div className='flex flex-col w-full space-y-4'>
                         <InputNumber register={register('number')} placeholder='Input your number' errors={formState.errors} label='Input Number' />
                     </div>
                 </div>
                 <div className='container-components-playground'>
-                    <span className='text-xl text-white'>Components Input Select</span>
+                    <span className='text-sm lg:text-xl text-white'>Components Input Select</span>
                     <div className='flex flex-col w-full space-y-4'>
                         <InputSelect
                             register={register('select')}
