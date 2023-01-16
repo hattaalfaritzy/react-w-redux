@@ -6,5 +6,6 @@ import AddList from './lists/add-list';
 import EditList from './lists/edit-list';
 import DetailList from './lists/detail-list';
 import NotFound from './not-found';
+import Playground from './_playground';
 
-export { Home, Login, Register, Lists, AddList, EditList, DetailList, NotFound };
+export { Home, Login, Register, Lists, AddList, EditList, DetailList, NotFound, Playground };
