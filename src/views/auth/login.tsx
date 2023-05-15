@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Button, Logo } from '../../components/commons';
 import { InputPassword, InputText } from '../../components/forms';
@@ -45,11 +45,6 @@ export default function Login() {
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-full lg:w-2/6 space-y-4'>
                 <InputText type='email' register={register('email')} errMessage={errors.email?.message} placeholder='Email' label='Email' />
                 <InputPassword register={register('password')} errMessage={errors.password?.message} placeholder='Password' label='Password' />
-                <div className='flex justify-end items-center w-full'>
-                    <NavLink to='/'>
-                        <span className='text-primary text-xs font-semibold'>Forgot Password?</span>
-                    </NavLink>
-                </div>
                 <Button label='Login' type='submit' className='w-full' loading={loading} classNameLabel='font-bold tracking-wide' />
             </form>
         </div>
