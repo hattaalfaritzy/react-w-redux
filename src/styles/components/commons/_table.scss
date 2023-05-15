@@ -1,0 +1,43 @@
+.table {
+    @apply table-fixed min-w-full;
+
+    th {
+        @apply p-3 text-left;
+    }
+
+    td {
+        @apply text-sm font-normal p-3;
+    }
+
+    thead > tr {
+        @apply border-b;
+    }
+
+    tbody > tr {
+        @apply bg-white/70 text-black;
+
+        &:not(.disabled):hover {
+            @apply bg-primary bg-opacity-30 text-white;
+        }
+
+        &.disabled > td {
+            @apply px-3 py-16 text-center text-light;
+        }
+    }
+
+    @each $i in (1, 2, 3, 4, 5, 6, 7, 8) {
+        &.col-#{$i}--fit {
+            th:nth-child(#{$i}),
+            td:nth-child(#{$i}) {
+                width: 1px;
+            }
+        }
+    }
+
+    &.col-last--fit {
+        th:last-child:not(:first-child),
+        td:last-child:not(:first-child) {
+            width: 1px;
+        }
+    }
+}

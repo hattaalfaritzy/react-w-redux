@@ -1,0 +1,13 @@
+.wrapper-avatar-cirle {
+    @apply overflow-hidden h-[220px];
+    // clip-path: polygon(0 10%, 100% 10%, 100% 90%, 0 90%);
+
+    .border-avatar-outer {
+        @apply flex justify-center items-center w-[280px] h-[280px] p-12 rounded-full border border-primary bg-white/30;
+
+        .border-avatar-inner {
+            @apply flex justify-center items-center w-[178px] h-[178px] bg-white/50 p-6 rounded-full;
+            border: 1px solid rgba(12, 77, 243, 0.1);
+        }
+    }
+}

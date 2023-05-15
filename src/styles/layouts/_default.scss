@@ -1,67 +1,29 @@
 #layout-default {
-    @apply grid h-full min-h-screen bg-dark;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    grid-template-columns: 0 minmax(0, 1fr);
-    grid-template-rows: 77px auto;
+    @apply flex flex-col w-full h-auto min-h-screen bg-dark;
 
-    @media only screen and (min-width: 768px) {
-        grid-template-rows: 80px auto;
+    .container-layout {
+        @apply flex flex-row justify-start w-full h-auto min-h-screen;
+
+        header.header {
+            @apply flex justify-center items-center max-w-screen-xl mx-auto w-full bg-dark ;
+        }
+
+        aside.sider {
+            @apply fixed lg:relative z-fixed top-0 bottom-0 flex flex-col w-full lg:w-0 -left-full on-hover bg-dark;
+            transition: left 0.6s ease;
+        }
+
+        main.main {
+            @apply flex h-full min-h-full p-8 max-w-screen-xl mx-auto w-full;
+        }
     }
 
-    header.header {
-        grid-area: header;
-        @apply fixed flex justify-center items-center z-fixed w-full h-16 lg:h-20 bg-dark;
+    &.sidebar-expanded aside.sider {
+        left: 0;
     }
 
-    aside {
-        grid-area: sidebar;
-        @apply fixed z-fixed bottom-0 bg-dark shadow-xl bg-fixed bg-no-repeat bg-contain w-full -left-full;
-        top: 0px;
-        transition: left 0.6s ease;
-    }
-
-    main {
-        @apply flex h-full;
-        grid-area: main;
-    }
     footer {
         grid-area: footer;
         @apply fixed z-fixed bottom-0 flex w-full shadow-lg;
     }
-
-    &.sidebar-expanded aside {
-        left: 0;
-    }
-}
-
-.py--default {
-    @apply py-6 md:py-7 xl:py-7
-}
-
-.px--default {
-    @apply px-6 md:px-16 xl:px-20
-}
-
-.p--default {
-    @apply py-6 md:py-7 xl:py-7;
-    @apply px-6 md:px-16 xl:px-20;
-}
-
-.pb--default {
-    @apply pb-6 md:pb-7 xl:pb-7
-}
-
-.mt--default-0 {
-    @apply -mt-6 md:-mt-7;
-}
-
-.mx--default {
-    @apply mx-6 md:mx-16 xl:mx-20
-}
-
-.remove-p--default {
-    @apply -mb-6 md:mb-7 xl:mb-7 -mx-6 md:-mx-16 xl:-mx-20;
 }

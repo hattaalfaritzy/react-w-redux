@@ -10,7 +10,15 @@
 @import 'base';
 @import 'utilities';
 
-// COMPONENTS
-@import 'components/commons/button';
+// VIEWS
+@import 'views/login';
 
+// FORMS
 @import 'components/forms/form';
+
+// COMPONENTS
+@import 'components/commons/avatar-circle';
+@import 'components/commons/button';
+@import 'components/commons/half-circle-progess';
+@import 'components/commons/loader';
+@import 'components/commons/table';

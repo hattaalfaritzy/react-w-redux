@@ -4,12 +4,12 @@ input:focus {
 
 // LABEL FORM
 .form-label {
-    @apply block font-semibold text-xs text-white;
+    @apply block font-semibold text-sm text-white;
 }
 
 // CONTAINER FORM INPUT ANIMATION
 .form-control-title-animation {
-    @apply p-2.5 px-0 w-full text-white text-xxs md:text-xs bg-transparent cursor-pointer;
+    @apply px-2 py-3 w-full text-white text-xs bg-transparent cursor-pointer;
 
     &:read-only {
         @apply focus:ring-0 focus:border-primary;
@@ -18,18 +18,34 @@ input:focus {
 
 // CONTAINER FORM INPUT DEFAULT
 .form-control-default {
-    @apply relative flex justify-between items-center w-full text-white text-xxs md:text-xs bg-transparent;
+    @apply relative flex justify-between items-center w-full text-white text-xs bg-transparent p-3;
 
     .input-form-default {
-        @apply p-2.5 w-full cursor-pointer bg-transparent;
+        @apply w-full cursor-pointer bg-transparent tracking-wide;
     }
 
     &:read-only {
-        @apply focus:ring-0 focus:border-black;
+        @apply focus:ring-0 focus:border-white;
     }
 }
 
 // FORM ERROR
 .form-error {
-    @apply border-danger focus:border-danger focus:ring-0;
+    @apply border-error focus:border-error focus:ring-0;
+}
+
+.textarea-control-default {
+    @apply relative flex justify-between items-center w-full text-white text-xs bg-transparent p-3;
+
+    .input-form-default {
+        @apply w-full cursor-pointer bg-transparent outline-none tracking-wide;
+    }
+
+    &:read-only {
+        @apply focus:ring-0 focus:border-white;
+    }
+}
+
+input[type='textarea'] {
+    appearance: none;
 }

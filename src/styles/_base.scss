@@ -5,15 +5,3 @@
 .hide-website {
     @apply flex md:hidden;
 }
-
-::-webkit-scrollbar {
-    @apply w-3;
-}
-
-::-webkit-scrollbar-track {
-    @apply bg-[#424242];
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-}

@@ -1,13 +1,17 @@
 .btn {
-    @apply text-white font-semibold border-2 border-primary;
+    @apply text-white font-normal border-2;
 }
 
 .btn-sm {
-    @apply text-xxxs py-1.5 px-2;
+    @apply text-xxs py-2 px-3;
 }
 
 .btn-md {
-    @apply text-sm py-2.5 px-4;
+    @apply text-sm py-3 px-4;
+}
+
+.btn-remove-size {
+    @apply p-0;
 }
 
 .btn-primary {
@@ -18,12 +22,20 @@
     @apply border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-30 text-primary bg-transparent;
 }
 
-.btn-danger {
-    @apply border-danger focus:outline-none focus:ring-2 focus:ring-danger focus:ring-opacity-30 bg-danger;
+.btn-light {
+    @apply border-[#F9FAFF] focus:outline-none focus:ring-2 focus:ring-[#F9FAFF] focus:ring-opacity-30 bg-[#F9FAFF] text-[#051F61];
 }
 
-.btn-outline-danger {
-    @apply border-danger focus:outline-none focus:ring-2 focus:ring-danger focus:ring-opacity-30 text-danger bg-transparent;
+.btn-outline-light {
+    @apply border-[#F9FAFF] focus:outline-none focus:ring-2 focus:ring-[#F9FAFF] focus:ring-opacity-30 text-[#F9FAFF] bg-transparent text-[#051F61];
+}
+
+.btn-error {
+    @apply border-error focus:outline-none focus:ring-2 focus:ring-error focus:ring-opacity-30 bg-error;
+}
+
+.btn-outline-error {
+    @apply border-error focus:outline-none focus:ring-2 focus:ring-error focus:ring-opacity-30 text-error bg-transparent;
 }
 
 .btn-transparent {
