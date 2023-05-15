@@ -7,9 +7,10 @@ import users from './users';
 
 const router = (isAuth: any) => [
     {
-        path: 'app',
+        path: '/',
         element: isAuth ? <DefaultLayout /> : <Navigate to='/login' />,
         children: [
+            { path: '', element: <Navigate to='/dashboard' /> },
             { path: 'dashboard', element: <Dashboard /> },
             ...products,
             ...users,
@@ -19,10 +20,10 @@ const router = (isAuth: any) => [
     },
     {
         path: '/',
-        element: !isAuth ? <OuterLayout /> : <Navigate to='/app/dashboard' />,
+        element: !isAuth ? <OuterLayout /> : <Navigate to='/dashboard' />,
         children: [
             { path: 'login', element: <Login /> },
-            { path: '/', element: <Navigate to='/app/dashboard' /> },
+            { path: '/', element: <Navigate to='/dashboard' /> },
             { path: '*', element: <Navigate to='/404' /> },
         ],
     },
