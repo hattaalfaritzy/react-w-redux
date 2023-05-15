@@ -7,6 +7,14 @@ export default defineConfig({
     server: {
         port: 8000,
     },
+    build: {
+        target: 'chrome87',
+        reportCompressedSize: false,
+        minify: true,
+        chunkSizeWarningLimit: 500,
+        cssCodeSplit: true,
+        write: true,
+    },
     resolve: {
         alias: {
             '@': '/src',
