@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'layouts/default';
+@import 'layouts/header';
+
+@import 'base';
+@import 'utilities';
+
+// VIEWS
+@import 'views/login';
+
+// FORMS
+@import 'components/forms/form';
+
+// COMPONENTS
+@import 'components/commons/avatar-circle';
+@import 'components/commons/button';
+@import 'components/commons/half-circle-progess';
+@import 'components/commons/loader';
+@import 'components/commons/table';

@@ -1,0 +1,48 @@
+.circle-accent-wrapper {
+    @apply absolute flex mr-auto w-[554px] h-[554px] top-0 left-0 z-10 bg-[url('/images/circle-accent.svg')] bg-contain bg-no-repeat;
+
+    // &:before {
+    //     content: "";
+    //     position: absolute;
+    //     left: -95px;
+    //     top: -110px;
+    //     width: 554px;
+    //     height: 554px;
+    //     background-image: url("/public/images/circle-accent.svg");
+    //     background-size: contain;
+    //     opacity: 0.1;
+    //     // background-color: #366bef9c;
+    //     /* filter: drop-shadow(10px 10px 30px rgba(0, 83, 240, 0.1)); */
+    //     z-index: 1;
+    //     // background-color: rgba(0, 83, 240, 0.1);
+    //     border-radius: 50%;
+    //     filter: drop-shadow(10px 10px 30px rgba(0, 83, 240, 0.1));
+    //     /* border: 1px solid white; */
+    //     // background-color: rgb(61 114 247 / 14%);
+    //     // filter: blur(4px);
+    //     // background-blend-mode: soft-light;
+    //     // box-shadow: 10px 10px 30px rgb(0 83 240 / 10%);
+    // }
+    // &:after {
+    //     content: "";
+    //     position: absolute;
+    //     left: -95px;
+    //     top: -110px;
+    //     width: 554px;
+    //     height: 554px;
+    //     backdrop-filter: blur(64px);
+    //     background: radial-gradient(
+    //         20% 20% at 40% 20%,
+    //         rgba(255, 255, 255, 0.6) 0%,
+    //         rgba(255, 255, 255, 0) 100%
+    //     );
+    //     opacity: 0.7;
+    //     z-index: 2;
+    //     // background-color:$primary;
+    //     filter: drop-shadow(10px 10px 30px rgba(0, 83, 240, 0.1));
+    //     // background-blend-mode: color-burn;
+    //     border-radius: 50%;
+    //     // filter: blur(4px);
+    //     background-size: cover;
+    // }
+}

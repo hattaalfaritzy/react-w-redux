@@ -1,0 +1,29 @@
+#layout-default {
+    @apply flex flex-col w-full h-auto min-h-screen bg-dark;
+
+    .container-layout {
+        @apply flex flex-row justify-start w-full h-auto min-h-screen;
+
+        header.header {
+            @apply flex justify-center items-center max-w-screen-xl mx-auto w-full bg-dark ;
+        }
+
+        aside.sider {
+            @apply fixed lg:relative z-fixed top-0 bottom-0 flex flex-col w-full lg:w-0 -left-full on-hover bg-dark;
+            transition: left 0.6s ease;
+        }
+
+        main.main {
+            @apply flex h-full min-h-full p-8 max-w-screen-xl mx-auto w-full;
+        }
+    }
+
+    &.sidebar-expanded aside.sider {
+        left: 0;
+    }
+
+    footer {
+        grid-area: footer;
+        @apply fixed z-fixed bottom-0 flex w-full shadow-lg;
+    }
+}
