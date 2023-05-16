@@ -41,7 +41,7 @@ export default function InputText({
                     )}
                     <div className='relative flex justify-between items-center w-full'>
                         {iconLeft && <div className='px-2.5 z-10'>{iconLeft}</div>}
-                        <input className={clsx('form-control-title-animation')} {...props} />
+                        <input className={clsx('form-control-title-animation')} {...register} {...props} />
                         {iconRight && <div className={clsx('px-2.5 z-10 text-lg cursor-pointer', errMessage ? 'text-error' : 'text-primary')}>{iconRight}</div>}
                     </div>
                     <div className='bg-primary h-0.5 relative'>
@@ -65,7 +65,6 @@ type Props = JSX.IntrinsicElements['input'] & {
     replaceClassNameLabel?: string;
     label?: string;
     register?: any;
-    errors?: any;
     rounded?: boolean;
     iconLeft?: any;
     iconRight?: any;
