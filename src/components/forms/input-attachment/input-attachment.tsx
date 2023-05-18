@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Icon, ImageWithFallback, Message } from '@/components/commons';
 import useUpload from '@/hooks/use-upload';
 
-export default function InputAttachment({ className, replaceClassNameLabel, label, register, errMessage, important, setImage, onDrop, onUpload, ...props }: Props) {
-    const { imagePreview, handleFileRead } = useUpload();
+export default function InputAttachment({ className, replaceClassNameLabel, label, register, errMessage, important, onDrop, onUpload, ...props }: Props) {
+    const { imagePreview } = useUpload();
     const [dragOver, setDragOver] = useState<boolean>(false);
 
     const clickInputFiles = (): void => {
@@ -28,7 +28,7 @@ export default function InputAttachment({ className, replaceClassNameLabel, labe
 
         if (files) {
             for (let i = 0; i < files.length; i++) {
-                const dataToPush: Awaited<Promise<AttachmentType>> = await handleFileRead(files[i]);
+                // const dataToPush: Awaited<Promise<AttachmentType>> = await handleFileRead(files[i]);
             }
         }
     }
@@ -39,7 +39,7 @@ export default function InputAttachment({ className, replaceClassNameLabel, labe
 
         if (files) {
             for (let i = 0; i < files.length; i++) {
-                const dataToPush: Awaited<Promise<AttachmentType>> = await handleFileRead(files[i]);
+                // const dataToPush: Awaited<Promise<AttachmentType>> = await handleFileRead(files[i]);
             }
         }
 	}
@@ -94,12 +94,4 @@ type Props = JSX.IntrinsicElements['input'] & {
     important?: boolean;
     onDrop?: any;
     onUpload?: any;
-    setImage?: any;
-};
-
-type AttachmentType = {
-	title: string;
-	description: string;
-	base64: string | ArrayBuffer;
-	type?: string;
 };

@@ -11,7 +11,6 @@ export default function AddProduct() {
         register,
         formState: { errors },
         handleSubmit,
-        setValue,
     } = useForm(formAddProduct);
 
     const navigate = useNavigate();
@@ -52,10 +51,3 @@ export default function AddProduct() {
         </div>
     );
 }
-
-type AttachmentType = {
-	title: string;
-	description: string;
-	base64: string | ArrayBuffer;
-	type?: string;
-};
