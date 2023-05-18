@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { Button, Card } from '../../commons';
-import { InputText, InputPassword, InputTextarea, InputCheckbox } from '../../forms';
+import { InputText, InputPassword, InputTextarea, InputCheckbox, InputAttachment } from '../../forms';
 import { formPlayground } from '../../../utils/form-validation';
 import { useState } from 'react';
 
@@ -67,6 +67,12 @@ export default function Forms() {
                             register={register('acceptTerms')}
                             // variant='reverse'
                         />
+                    </div>
+                </div>
+                <div className='container-components-playground'>
+                    <span className='title-playground'>Components Input Attachment</span>
+                    <div className='flex flex-col w-full space-y-4'>
+                        <InputAttachment register={register('image')} errMessage={errors.image?.message} label='Input Attachment' />
                     </div>
                 </div>
                 {/* <div className='container-components-playground'>

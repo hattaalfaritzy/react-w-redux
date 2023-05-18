@@ -30,7 +30,7 @@ export const login = ({ email, password }: any) => async (dispatch: (args: { typ
 export const logout = () => async (dispatch: (args: { type: string; }) => void) => {
 	const { removeLocalStorageItem } = useStorage();
     try {
-		removeLocalStorageItem('token');
+		removeLocalStorageItem('token'); 
         dispatch({
 			type: actionName.AUTH_LOGOUT
 		});
