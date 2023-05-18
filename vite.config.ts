@@ -11,7 +11,7 @@ export default defineConfig({
         target: 'chrome87',
         reportCompressedSize: false,
         minify: true,
-        chunkSizeWarningLimit: 500,
+        chunkSizeWarningLimit: 550,
         cssCodeSplit: true,
         write: true,
     },
